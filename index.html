@@ -4,66 +4,40 @@
     <meta charset="UTF-8">
     <title>موقع فاتي الأسطوري ⚔️🌸</title>
     <style>
-        body { 
-            background-color: #ffe6f2; 
-            font-family: 'Arial', sans-serif; 
-            text-align: center; 
-            padding-top: 50px; 
-            overflow-x: hidden;
-            margin: 0;
-        }
+        body { background-color: #ffe6f2; font-family: 'Arial', sans-serif; text-align: center; padding-top: 50px; overflow-x: hidden; margin: 0; }
         .pulse { font-size: 50px; color: #ff66b2; animation: pulse 1.5s infinite; text-shadow: 2px 2px white; }
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.1); } 100% { transform: scale(1); } }
-        
-        button { 
-            background-color: #ff66b2; color: white; border: none; 
-            padding: 15px 35px; font-size: 22px; border-radius: 50px; 
-            cursor: pointer; transition: 0.4s; box-shadow: 0 5px 15px rgba(255,102,178,0.4);
-            position: relative; z-index: 10;
-        }
-        button:hover { background-color: #ff3399; transform: scale(1.1) rotate(-3deg); }
-        
-        #gift { display: none; margin-top: 30px; position: relative; z-index: 10; }
-        img { border-radius: 20px; width: 350px; box-shadow: 0 15px 35px rgba(0,0,0,0.3); border: 8px solid white; }
-
-        /* تأثير تساقط الورود */
+        button { background-color: #ff66b2; color: white; border: none; padding: 15px 35px; font-size: 22px; border-radius: 50px; cursor: pointer; transition: 0.4s; z-index: 10; position: relative; }
+        button:hover { background-color: #ff3399; transform: scale(1.1); }
+        #gift { display: none; margin-top: 30px; z-index: 10; position: relative; }
+        img { border-radius: 20px; width: 350px; border: 8px solid white; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
         .petals { position: fixed; top: -10%; user-select: none; pointer-events: none; z-index: 1; animation: fall linear infinite; }
-        @keyframes fall {
-            to { transform: translateY(110vh) rotate(360deg); }
-        }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
     </style>
 </head>
 <body>
-
     <h1 class="pulse">فاتي المحاربة وصلت! ⚔️🌸</h1>
     <button onclick="showGift()">اضغطي لسر مولان 🎁</button>
-
     <div id="gift">
         <p style="font-size: 28px; color: #ff3399; font-weight: bold;">أنتِ أسطورة لا تُقهر! 💪💖</p>
-     <img  src="https://p16-capcut-va.ibyteimg.com/tos-alisg-v-643f9f/o8be9EIAfDAtne7AgfGBAfEIE8uAnmDQAClfDe~tplv-nhvf63901r-g720.webp" alt="Mulan">
-
-
+        <img src="https://i.pinimg.com/736x/83/87/40/8387406a09695d7f1f0a103c61314356.jpg" alt="Mulan">
+    </div>
     <script>
         function showGift() {
             document.getElementById('gift').style.display = 'block';
             alert("مولان تقول لكِ: القوة في داخلكِ يا فاتي! ✨");
             createPetals();
         }
-
         function createPetals() {
             for (let i = 0; i < 30; i++) {
                 let petal = document.createElement('div');
-                petal.className = 'petals';
-                petal.innerHTML = '🌸';
+                petal.className = 'petals'; petal.innerHTML = '🌸';
                 petal.style.left = Math.random() * 100 + 'vw';
                 petal.style.fontSize = (Math.random() * 20 + 10) + 'px';
                 petal.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                petal.style.opacity = Math.random();
                 document.body.appendChild(petal);
             }
         }
     </script>
-
 </body>
 </html>
-
